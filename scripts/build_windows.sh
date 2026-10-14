@@ -1,5 +1,5 @@
 #!/bin/sh
-# Windows용 바이너리를 output/stockagent.exe 로 빌드한다.
+# Windows용 바이너리를 output/mantong.exe 로 빌드한다.
 set -eu
 cd "$(dirname "$0")/.."
 mkdir -p output

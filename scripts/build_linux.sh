@@ -1,5 +1,5 @@
 #!/bin/sh
-# Linux용 바이너리를 output/stockagent 로 빌드한다.
+# Linux용 바이너리를 output/mantong 으로 빌드한다.
 set -eu
 cd "$(dirname "$0")/.."
 mkdir -p output

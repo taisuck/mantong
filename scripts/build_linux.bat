@@ -1,5 +1,5 @@
 @echo off
-rem Linux용 바이너리를 output\stockagent 로 빌드한다.
+rem Linux용 바이너리를 output\mantong 으로 빌드한다.
 setlocal
 cd /d "%~dp0.."
 if not exist output mkdir output
