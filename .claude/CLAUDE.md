@@ -10,6 +10,7 @@ victoria metrics에 수집된 시계열 데이터를 가공 처리하는 go 프�
 
 - 모듈 경로: `github.com/taisuck/mantong` (저장소 루트에 단일 모듈)
 - 개발 문서 경로 : `https://app.notion.com/p/taisuck/3f85839e81d7803b8d9be9c01bc94f32?v=3f85839e81d780509e95000c3c1427ed`
+- DB 스키마 문서 경로 : `https://app.notion.com/p/taisuck/DB-3f95839e81d780a79a95feb489292c5d`
 - 소스파일은 `src` 폴더 아래에 위치
 
 ```
