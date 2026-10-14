@@ -22,6 +22,24 @@ src/mongodb     MongoDB 연결
 
 ## 주요 명령어
 
+```sh
+go build ./...             # 전체 빌드
+go run ./src -config config.yml -log-level debug
+go vet ./...               # 정적 분석
+gofmt -l .                 # 포맷되지 않은 파일 목록 (출력이 비어 있으면 정상)
+gofmt -w .                 # 제자리에서 포맷 적용
+go mod tidy                # import 변경 후 go.mod/go.sum 동기화
+go test ./...              # 전체 테스트
+go test -run '^TestName$' ./path/to/pkg   # 단일 테스트 실행
+```
+
+크로스 빌드(어느 OS에서든 상대 OS용 바이너리를 만들 수 있다. cgo를 쓰지 않는다):
+
+```sh
+scripts/build_linux.sh     scripts/build_windows.sh     # Linux 셸에서
+scripts\build_linux.bat    scripts\build_windows.bat    # Windows cmd에서
+```
+
 
 ## 언어 및 대화 지침 (Language)
 

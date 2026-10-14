@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: mantong API
+  description: victoria metrics에 수집된 시계열 데이터를 가공 처리하는 웹 백엔드 API
+  version: 0.1.0
+
+tags:
+  - name: stock
+    description: 현재 수집 중인 주식에 대한 method
+
+paths:
+  /stock:
+    get:
+      tags:
+        - stock
+      summary: stock list
+      description: 현재 수집 중인 주식의 목록을 가져옵니다.
+      operationId: listStocks
+      responses:
+        "200":
+          description: 성공
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Stock"
+              example:
+                - id: 6527a1f3c2b4e8a1d0f3b9c1
+                  name: 삼성전자
+                  code: "005930"
+        "500":
+          description: 서버 내부 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    # MongoDB stock 컬렉션 (_id, name, code, created_at) 기반
+    Stock:
+      type: object
+      required:
+        - id
+        - name
+        - code
+      properties:
+        id:
+          type: string
+          description: 키값 (MongoDB ObjectId의 hex 문자열)
+          pattern: "^[0-9a-f]{24}$"
+        name:
+          type: string
+          description: 주식 이름
+        code:
+          type: string
+          description: 주식 코드 (unique)
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: 오류 메시지
