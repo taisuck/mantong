@@ -36,5 +36,5 @@ config.yml
 config.yaml
 
 logs/
-
+output/
 conf/
